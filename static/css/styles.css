@@ -1,0 +1,21 @@
+h1 {
+   text-align: center;
+   background-color: blueviolet;
+}
+
+tr:nth-child(even) {
+   background-color: #D6EEEE;
+}
+
+table {
+   background-color: gray;
+}
+
+.person_table {
+   background-color: cadetblue;
+}
+
+#game_cover_img {
+   max-width: 64px;
+   max-height: 32px;
+}

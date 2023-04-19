@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>People's current games</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <script src="{{ url_for('static', filename='javascript/code.js') }}"></script>
+    </head>
+
+    <body>
+        <h1>Here are the games people are currently playing:</h1>
+        <h2>Here is the list of people:</h2>
+        
+        <div contenteditable='true' class="person_table">
+            {% for person in peopleLst %}
+                <table>
+                    <p>{{ person.name }}:</p>
+                    <tr>
+                        <th>Games</th>
+                        <th>Game Covers</th>
+                    </tr>
+                    {% for game in person.games %}
+                        <tr>
+                            <td>{{ game }}</td>
+                            {% if person.game_covers[game] != 'N/a' %}
+                                <td><img id="game_cover_img" src="{{ person.game_covers[game] }}">{{ person.game_covers[game] }}</td>
+                            {%else%}
+                                <td>{{ person.game_covers[game] }}</td>
+                            {%endif%}
+                        </tr>
+                    {% endfor %}
+                    
+                </table>
+            {% endfor %}
+        </div>
+
+
+    </body>
+</html>
