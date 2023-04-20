@@ -9,15 +9,8 @@ app = Flask(__name__)
 
 
 peopleLst = []
-# global peopleLst
-# gameDisplayFileFolderPath = os.path.join('B:', os.path.sep+'Game Display Files')
-# gameMapFilePath = os.path.join('B:', os.path.sep+'Game Display Files'+os.path.sep, 'gameMap.save')
 gameDisplayFileFolderPath = os.path.join( '..' + os.path.sep+'..' +os.path.sep + 'mnt' + os.path.sep, 'BrettNAS' + os.path.sep, 'Game Display Files')
 peopleLstFilePath = os.path.join('..' + os.path.sep+'..' +os.path.sep + 'mnt' + os.path.sep, 'BrettNAS' + os.path.sep, 'Game Display Files'+os.path.sep, 'peopleLst.save')
-# ../../mnt/BrettNAS/Game Display Files
-
-# {"Brett": ["Atomic heart"], "Taylere": ["Stray", "Pokemon Violet", "It Takes Two", "Zero Dawn Horizon"]}
-
 
 def setup_peopleLst():
     global peopleLst
@@ -112,7 +105,3 @@ setup_app(app)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=30006, debug=True)
-    # app.run(host='127.0.0.1', port=30006, debug=True)
-
-    # gameMap['Brett'] = ['Atomic heart']
-    # gameMap['Taylere'] = [ 'Stray', 'Pokemon Violet', 'It Takes Two', 'Zero Dawn Horizon'  ]

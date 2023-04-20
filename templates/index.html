@@ -12,20 +12,64 @@
         
         <div contenteditable='true' class="person_table">
             {% for person in peopleLst %}
-                <table>
-                    <p>{{ person.name }}:</p>
+            <table>
+                    <h2>{{ person.name }}:</h2>
                     <tr>
                         <th>Games</th>
-                        <th>Game Covers</th>
+                        <th>Game Cover Links</th>
+                        <th>Game Cover Images</th>
+                        <th>Name Text Color</th>
+                        <th>game Text Color</th>
                     </tr>
                     {% for game in person.games %}
                         <tr>
-                            <td>{{ game }}</td>
+                            
+                            
+                            <td id="game_name">{{ game }}</td>
                             {% if person.game_covers[game] != 'N/a' %}
-                                <td><img id="game_cover_img" src="{{ person.game_covers[game] }}">{{ person.game_covers[game] }}</td>
+                                <td class="game_cover_link">{{ person.game_covers[game] }}</td>
+                                <td><img id="game_cover_img" src="{{ person.game_covers[game] }}"></td>
                             {%else%}
-                                <td>{{ person.game_covers[game] }}</td>
+                                <td class="game_cover_link">{{ person.game_covers[game] }}</td>
+                                <td><img id="missing_game_cover_img" src="{{ url_for('static', filename='images/icons8-image-24.png') }}"></td>
                             {%endif%}
+
+                            <!-- <td id="name_text_color">{{ person.name_text_color }}</td> -->
+                            <td id="name_text_color">
+
+
+                                <div class="name_text_color_select">
+                                    {{ person.name_text_color }}
+
+                                    <ul>
+                                        <li><a href="#">Item 1</a>
+                                            <ul>
+                                                <li><a href="#">Item 1a</a></li>
+                                                <li><a href="#">Item 1b</a></li>
+                                                <li><a href="#">Item 1c</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Item 2</a></li>
+                                        <li><a href="#">Item 3</a></li>
+                                    </ul>
+
+                                </div>
+
+                                <!-- <select name="cars" id="cars">
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi" backgroundcolor="green" selected>Audi</option>
+                                </select> -->
+
+                            </td>
+
+
+
+
+
+                            <!-- <td id="game_text_color">{{ person.game_text_color }}</td> -->
+                            
                         </tr>
                     {% endfor %}
                     

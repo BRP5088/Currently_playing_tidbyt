@@ -1,21 +1,47 @@
 h1 {
    text-align: center;
-   background-color: blueviolet;
+   background-color: rgb(126, 104, 200);
+}
+
+
+.person_table {
+   background-color: #5f9ea0;
+   text-align: center;
+}
+
+table {
+   background-color: gray;
+   border: solid black 1px;
+   margin-left: 25%;
+   margin-right: 0%;
+}
+
+th {
+   color:black;
+}
+
+tr > td {
+   margin: 100%;
+   /* background-color: rgb(43, 226, 86); */
 }
 
 tr:nth-child(even) {
    background-color: #D6EEEE;
 }
 
-table {
-   background-color: gray;
+
+
+#game_name {
+   min-width: 150px;
 }
 
-.person_table {
-   background-color: cadetblue;
+.game_cover_link {
+   min-width: 250px;
+   max-width: 600px;
 }
 
-#game_cover_img {
+#game_cover_img, #missing_game_cover_img {
    max-width: 64px;
    max-height: 32px;
+   /* min-width: 250px; */
 }
